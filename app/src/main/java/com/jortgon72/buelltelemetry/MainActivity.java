@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
             List<UsbSerialDriver> availableDrivers = UsbSerialProposer.getDefaultProposer().findAllDrivers(manager);
 
             if (availableDrivers.isEmpty()) {
-                tvStatus.setText("Aplicación lista\n(Sin cable USB detectado)");
+                tvStatus.setText("Buell Telemetry Lista\n(Esperando conexión USB OTG)");
             } else {
                 tvStatus.setText("¡Adaptador USB Serie detectado!");
             }
         } catch (Exception e) {
-            tvStatus.setText("Error al verificar USB: " + e.getMessage());
+            tvStatus.setText("Error USB: " + e.getMessage());
         }
     }
 }
