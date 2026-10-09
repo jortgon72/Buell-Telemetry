@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.myapp'
+    namespace 'com.jortgon72.buelltelemetry'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.myapp"
+        applicationId "com.jortgon72.buelltelemetry"
         minSdk 21
         targetSdk 34
         versionCode 1
