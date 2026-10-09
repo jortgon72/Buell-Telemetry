@@ -1,0 +1,39 @@
+package com.jortgon72.buelltelemetry;
+
+import android.hardware.usb.UsbManager;
+import android.os.Bundle;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import com.hoho.android.usbserial.driver.UsbSerialDriver;
+import com.hoho.android.usbserial.driver.UsbSerialProposer;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    private TextView tvStatus;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        tvStatus = findViewById(R.id.tvStatus);
+
+        checkUsbConnection();
+    }
+
+    private void checkUsbConnection() {
+        try {
+            UsbManager manager = (UsbManager) getSystemService(USB_SERVICE);
+            List<UsbSerialDriver> availableDrivers = UsbSerialProposer.getDefaultProposer().findAllDrivers(manager);
+
+            if (availableDrivers.isEmpty()) {
+                tvStatus.setText("Aplicación lista\n(Sin cable USB detectado)");
+            } else {
+                tvStatus.setText("¡Adaptador USB Serie detectado!");
+            }
+        } catch (Exception e) {
+            tvStatus.setText("Error al verificar USB: " + e.getMessage());
+        }
+    }
+}
