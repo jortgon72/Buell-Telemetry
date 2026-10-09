@@ -6,8 +6,7 @@
     <application
         android:allowBackup="true"
         android:label="Buell Telemetry"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:supportsRtl="true">
 
         <activity
             android:name="com.jortgon72.buelltelemetry.MainActivity"
