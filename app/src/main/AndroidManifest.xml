@@ -10,7 +10,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity
-            android:name="com.jortgon72.buell-telemetry.MainActivity"
+            android:name="com.jortgon72.buelltelemetry.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
