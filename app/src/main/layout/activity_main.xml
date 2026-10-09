@@ -1,4 +1,4 @@
-package com.jortgon.buelltelemetry
+package com.jortgon72.buelltelemetry
 
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
